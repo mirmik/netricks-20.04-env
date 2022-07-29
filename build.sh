@@ -1,0 +1,1 @@
+docker build . -t netricks-20.04-env
