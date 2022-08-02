@@ -1,11 +1,13 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
       apt-get -y install apt-utils sudo software-properties-common \
       keyboard-configuration \
       libreadline-dev \
       libjsoncpp-dev \
-      libmodbus-dev
+      libmodbus-dev \
+      nano \
+      tree
 
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
