@@ -1,6 +1,8 @@
 ARG ARCH
 FROM $ARCH/ubuntu
 
+RUN touch update_flag_1
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
       apt-get -y install apt-utils sudo software-properties-common \
       keyboard-configuration \
@@ -42,3 +44,12 @@ WORKDIR /root/ircc
 RUN cmake .
 RUN cmake --build . --config Release
 RUN sudo cmake --build . --config Release --target install
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y \
+    libopengl-dev \
+    libglew-dev \
+    libglfw3-dev \
+    libglm-dev \
+    libassimp-dev 
+
+ADD ./sanitize-check.sh /root/sanitize-check.sh
