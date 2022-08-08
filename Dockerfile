@@ -40,6 +40,11 @@ RUN cmake .
 RUN cmake --build . --config Release
 RUN sudo cmake --build . --config Release --target install
 
+WORKDIR /root/cpp-httplib-static
+RUN cmake .
+RUN cmake --build . --config Release
+RUN sudo cmake --build . --config Release --target install
+
 WORKDIR /root/ircc
 RUN cmake .
 RUN cmake --build . --config Release
