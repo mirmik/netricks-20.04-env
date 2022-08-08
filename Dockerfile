@@ -9,6 +9,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
       libreadline-dev \
       libjsoncpp-dev \
       libmodbus-dev \
+      libopengl-dev \
+      libglew-dev \
+      libglfw3-dev \
+      libglm-dev \
+      libassimp-dev \
       nano \
       tree
 
@@ -50,12 +55,5 @@ WORKDIR /root/ircc
 RUN cmake .
 RUN cmake --build . --config Release
 RUN sudo cmake --build . --config Release --target install
-
-RUN DEBIAN_FRONTEND=noninteractive apt install -y \
-    libopengl-dev \
-    libglew-dev \
-    libglfw3-dev \
-    libglm-dev \
-    libassimp-dev 
 
 ADD ./sanitize-check.sh /root/sanitize-check.sh
