@@ -8,6 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
       keyboard-configuration \
       libreadline-dev \
       libjsoncpp-dev \
+      libfmt-dev \
       libmodbus-dev \
       libopengl-dev \
       libglew-dev \
