@@ -28,6 +28,7 @@ RUN DEBIAN_FRONTEND=noninterative sudo ln -s /usr/bin/gcc-11 /usr/bin/gcc
 WORKDIR /root 
 RUN git clone https://github.com/ReactiveX/RxCpp
 RUN git clone https://github.com/yhirose/cpp-httplib
+RUN git clone https://github.com/mirmik/cpp-httplib-static
 RUN git clone https://github.com/mirmik/ircc
 
 WORKDIR /root/RxCpp
