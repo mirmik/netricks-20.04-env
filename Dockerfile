@@ -6,6 +6,7 @@ RUN touch update_flag_1
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
       apt-get -y install apt-utils sudo software-properties-common \
       keyboard-configuration \
+      qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
       libreadline-dev \
       libjsoncpp-dev \
       libfmt-dev \
