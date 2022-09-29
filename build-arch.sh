@@ -26,7 +26,7 @@ fi
 
 libc="libc.so.6"
 libstdcpp="libstdc++.so.6"
-docker build . -t netricks-20.04-env:$arch -f docker.arch --build-arg ARCH=$arch
+docker build . -t netricks-20.04-env:$arch -f Dockerfile --build-arg ARCH=$arch
 docker tag netricks-20.04-env:$arch netricks/netricks-20.04-env:$arch
 
 mkdir -p dist/$arch
